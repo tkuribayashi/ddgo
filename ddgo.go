@@ -199,6 +199,10 @@ func createMonitors() {
 			log.Println("response body:", string(b))
 			return
 		}
+		if resp.StatusCode != 200 {
+			fmt.Println("failed with response status code:", resp.StatusCode)
+			return
+		}
 		// log.Println(LogSeparator, "createAMonitor", LogSeparator)
 		fmt.Println("created:", monitorName)
 		// log.Println(string(b))
